@@ -21,9 +21,23 @@ var commonCharacters = function(string1, string2) {
         }
     }
 
-    let newString = string3.join('');
+    let object = {};
 
-    return newString;
+    string3.forEach(element => {
+        if (!object[element]) {
+            object[element] = 1;
+        }
+    })
 
-    
+    let finalArr = [];
+
+    for (let obj in object) {
+        finalArr.push(obj);
+    }
+
+    let newString = finalArr.join('');
+
+    return newString;   
 };
+
+// console.log(commonCharacters('aacddxxxexivou', 'aaegddxxxihobu'))
