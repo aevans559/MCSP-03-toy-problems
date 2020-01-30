@@ -10,6 +10,34 @@
  * console.log(index); // null
  */
 
-var binarySearch = function(array, target) {
 
+var binarySearch = function(array, target) {
+    let centerIndex = Math.floor(array.length / 2);
+    let middleElement = array[centerIndex];
+    let startingIndex;
+
+    if (!array.includes(target)) {
+        return null;
+    };
+
+    if (middleElement === target) {
+        return centerIndex
+    } else if (middleElement < target) {
+        startingIndex = centerIndex + 1;
+        for (let i = startingIndex; i < array.length; i--) {
+            if (array[i] === target) {
+                return i;
+            }
+        }
+    } else if (middleElement > target) {
+        startingIndex = centerIndex - 1;
+        for (let j = startingIndex; j < array.length; j++) {
+            if (array[j] === target) {
+                return j;
+            }
+        }
+    }
 };
+
+
+

@@ -40,4 +40,4 @@ var commonCharacters = function(string1, string2) {
     return newString;   
 };
 
-// console.log(commonCharacters('aacddxxxexivou', 'aaegddxxxihobu'))
+console.log(commonCharacters('aacexivou', 'aaegihobu'))
