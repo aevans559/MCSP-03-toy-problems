@@ -7,4 +7,29 @@
 // "mississippi" => [ [ "i", 4 ], [ "s", 4 ], [ "p", 2 ], [ "m", 1 ] ]
 // "" => [ ]
 
-function characterFrequency() {}
+function characterFrequency(str) {
+    let obj = {};
+    let result = [];
+
+    for (let char of str) {
+        if (!obj[char]) {
+            obj[char] = 1;
+        } else {
+            obj[char] += 1;
+        }
+    }
+
+    for (let [key, value] of Object.entries(obj)) {
+        result.push([key, value])
+    }
+    
+    let sorted = result.sort((a, b) => {
+        if (a[1] - b[1] === 0) {
+            return a[0] - b[0]
+        } else {
+            return b[1] - a[1];
+        }
+    });
+
+    return sorted;  
+}
